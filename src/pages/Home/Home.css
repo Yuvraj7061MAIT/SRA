@@ -1,0 +1,77 @@
+/* src/components/PopularCourses.css */
+.popular-courses {
+    margin: 0;
+    background-color: #f5f5f5; /* Grey background */
+    padding: 40px 20px; /* Adjust this as needed */
+    text-align: center;
+    border-radius: 10px;
+}
+
+.popular-courses h2,
+.popular-courses p {
+    margin: 0; /* Reset margins for title and paragraph */
+    padding: 0; /* Ensure no padding */
+}
+
+/* Add this to ensure the card layout is correct */
+.cards {
+    margin: 0; /* No margin for cards container */
+    padding: 0; /* No padding for cards container */
+    display: flex; /* Horizontal layout for cards */
+    justify-content: center; /* Center the cards */
+    gap: 20px; /* Space between cards */
+}
+
+
+.cards .card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    height: 150px; /* Adjusted height for better visibility */
+    width: 200px; /* Card width */
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    transition: 400ms;
+}
+
+.cards .red {
+    background-color: #f43f5e;
+}
+
+.cards .blue {
+    background-color: #3b82f6;
+}
+
+.cards .green {
+    background-color: #22c55e;
+}
+
+.cards .yellow {
+    background-color: #eab308; /* Added a yellow card */
+}
+
+.cards .card p.tip {
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+.cards .card p.second-text {
+    font-size: 1em;
+}
+
+.cards .card p.course-code {
+    font-size: 0.8em;
+    margin-top: 5px; /* Space above the course code */
+}
+
+.cards .card:hover {
+    transform: scale(1.1, 1.1);
+}
+
+.cards:hover > .card:not(:hover) {
+    filter: blur(10px);
+    transform: scale(0.9, 0.9);
+}

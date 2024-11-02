@@ -1,0 +1,21 @@
+/* Header.css */
+
+/* General Styles */
+.header {
+    background-color: #ffffff; /* Background color for the header */
+    padding: 20px 0; /* Vertical padding */
+  }
+  
+  .header__container {
+    max-width: 2200px; /* Maximum width for the header */
+    margin: 0 auto; /* Center the container */
+    padding: 0 20px; /* Horizontal padding */
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .header__container {
+      padding: 0 10px; /* Reduce horizontal padding on smaller screens */
+    }
+  }
+  

@@ -1,0 +1,50 @@
+.banner__section {
+    margin: 0;
+    padding: 0; /* Ensure no padding */
+    overflow: hidden; /* Hide overflowing slides */
+    position: relative; /* Positioning context for absolute children */
+    width: 100%; /* Full width */
+    height: auto; /* Height will adjust based on content */
+}
+
+.banner__slides {
+    display: flex; /* Align slides in a row */
+    animation: slide 12s infinite; /* Start animation */
+}
+
+.banner__slides img {
+    width: 100%; /* Full width */
+    height: auto; /* Allow height to adjust automatically */
+    max-height: 100vh; /* Maximum height to keep it within the viewport */
+    object-fit: cover; /* Cover the section while preserving aspect ratio */
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0); /* Start at original position */
+    }
+    20% {
+        transform: translateX(0); /* Keep first image visible */
+    }
+    25% {
+        transform: translateX(-100%); /* Move first image out */
+    }
+    45% {
+        transform: translateX(-100%); /* Keep second image visible */
+    }
+    50% {
+        transform: translateX(-200%); /* Move second image out */
+    }
+    70% {
+        transform: translateX(-200%); /* Keep third image visible */
+    }
+    75% {
+        transform: translateX(-300%); /* Move third image out */
+    }
+    95% {
+        transform: translateX(-300%); /* Keep fourth image visible */
+    }
+    100% {
+        transform: translateX(0); /* Reset to start */
+    }
+}

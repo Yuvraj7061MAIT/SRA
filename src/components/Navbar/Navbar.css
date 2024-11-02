@@ -1,0 +1,145 @@
+/* Navbar.css */
+
+/* General Styles */
+nav {
+    background-color: #ffffff; /* Background color for the navbar */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 20px;
+}
+
+.top__navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo img {
+    height: 40px; /* Logo height */
+}
+
+.search__box {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc; /* Border around the search box */
+    border-radius: 20px; /* Rounded corners */
+    overflow: hidden; /* Clip the inner elements */
+}
+
+.search__icon {
+    padding: 10px;
+    background-color: #f4f4f4; /* Background for the search icon */
+}
+
+.input__field {
+    border: none; /* Remove default border */
+    padding: 10px;
+    outline: none; /* Remove outline */
+    width: 200px; /* Default width */
+}
+
+.nav__btns {
+    display: flex;
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    width: 100%; /* Full width for buttons */
+    gap: 10px; /* Space between buttons */
+}
+
+
+.primary__btn {
+    background-color: #7349d4; /* Primary button color */
+    width: 150px;
+    height: 50px;
+    border-radius: 10px; /* Rounded corners */
+    padding: 10px 15px; /* Padding for buttons */
+    transition: background-color 0.3s; /* Transition for hover effect */
+}
+.login_nav__btn{
+    color: white;
+    text-align: center;
+    justify-content: center;
+    text-decoration: none; /* Remove underline */;
+    transition: background-color 0.3s; /* Transition for hover effect */
+
+}
+
+.primary__btn:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+.header__navbar {
+    background-color: #f8f9fa; /* Background for the bottom navbar */
+}
+
+.navlist {
+    text-align: center;
+    justify-content: center;
+    list-style-type: none; /* Remove default list styling */
+    display: flex; /* Horizontal list */
+    justify-content: space-around; /* Space items evenly */
+    padding: 10px 0; /* Vertical padding */
+    margin: 0; /* Remove margin */
+}
+
+.navlink {
+    text-decoration: none; /* Remove underline */
+    color: #333; /* Text color */
+    font-weight: 500; /* Font weight for links */
+    display: flex;
+    align-items: center; /* Center items vertically */
+}
+
+.navlink:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+
+/* Mobile Menu Styles */
+.mobile-menu {
+    display: none; /* Hidden by default */
+}
+
+.mobile-menu.open {
+    display: flex; /* Show when open */
+    flex-direction: column; /* Stack vertically */
+    padding: 10px 20px; /* Add padding */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .top__navbar {
+        flex-direction: column; /* Stack items on smaller screens */
+        align-items: flex-start; /* Align items to the left */
+    }
+
+    .search__box {
+        width: 100%; /* Full width on smaller screens */
+        margin: 10px 0; /* Add margin */
+    }
+
+    .nav__btns {
+        width: 100%; /* Full width for buttons */
+        justify-content: space-between; /* Space between buttons */
+    }
+
+    .header__navbar {
+        flex-direction: column; /* Stack navbar items */
+        align-items: flex-start; /* Align items to the left */
+    }
+
+    .navlist {
+        flex-direction: column; /* Vertical list on small screens */
+        align-items: flex-start; /* Align items to the left */
+        display: none; /* Hide by default */
+    }
+
+    .navlist.open {
+        display: flex; /* Show when open */
+    }
+
+    .mobile-menu {
+        display: block; /* Show hamburger icon */
+        cursor: pointer; /* Pointer for clickable icon */
+    }
+}
