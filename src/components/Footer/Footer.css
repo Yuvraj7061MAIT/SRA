@@ -1,0 +1,63 @@
+.footer-container {
+    background-color: #2c3e50; /* Dark blue background for the footer */
+    color: white; /* White text color */
+    padding: 30px; /* Padding around the footer */
+    text-align: left; /* Left align the text */
+}
+
+.footer-content {
+    display: flex; /* Flexbox for layout */
+    justify-content: space-between; /* Space between contact details and links */
+    max-width: 1200px; /* Maximum width of the footer */
+    margin: 0 auto; /* Center the footer content */
+}
+
+.contact-details, .useful-links {
+    flex: 1; /* Equal width for both sections */
+    margin-right: 20px; /* Space between sections */
+}
+
+.contact-details h3, .useful-links h3 {
+    font-size: 1.5rem; /* Font size for headings */
+    margin-bottom: 10px; /* Space below headings */
+}
+
+.contact-details p {
+    font-size: 1rem; /* Font size for text */
+    margin: 5px 0; /* Space between paragraphs */
+}
+
+.useful-links ul {
+    list-style: none; /* Remove bullet points from list */
+    padding: 0; /* Remove default padding */
+}
+
+.useful-links li {
+    margin: 5px 0; /* Space between links */
+}
+
+.useful-links a {
+    text-decoration: none; /* Remove underline from links */
+    color: #8d3beb; /* Orange color for links */
+    transition: color 0.3s; /* Transition for color change */
+}
+
+.useful-links a:hover {
+    color: #e67e22; /* Darker orange on hover */
+}
+
+.academy-info {
+    text-align: center; /* Center align the academy info */
+    width: 100%; /* Cover the full width */
+    margin-top: 20px; /* Space above the academy info */
+    font-size: 1rem; /* Font size for academy info */
+    color: white; /* White color for the info text */
+    border: 2px solid #8739ec; /* Border around the info text */
+    padding: 10px; /* Padding inside the border */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Box shadow for depth */
+    border-radius: 5px; /* Slightly rounded corners */
+    background-color: rgba(44, 62, 80, 0.8); /* Slightly transparent background for contrast */
+    position: relative; /* Allow for positioning */
+    bottom: 0; /* Align to the bottom */
+    z-index: 1; /* Ensure it appears above other content */
+}

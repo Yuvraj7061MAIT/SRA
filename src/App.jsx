@@ -8,6 +8,7 @@ import Notes from './pages/Notes/Notes'
 import Teachers from './pages/Teachers/Teachers'
 import Contact from './pages/Contact/Contact'
 import './App.css';
+import Footer from './components/Footer/Footer';
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
           <Route path="/teachers" element={<Teachers />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
+        <Footer />
       </div>
     </Router>
   );
