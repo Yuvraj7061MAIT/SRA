@@ -1,0 +1,143 @@
+/* General Styling for Courses Page */
+.courses-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    margin-top: 100px; /* Space under the banner */
+}
+
+/* Vertical Container */
+.vertical-container {
+    width: 100%;
+    max-width: 1100px;
+    background: #9373dd;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+/* Topic Item */
+.topic-item {
+    margin-bottom: 15px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.3s;
+    background: #f0f0f0;
+}
+
+.topic-item:hover {
+    background-color: #ececec;
+    transform: scale(1.02);
+}
+
+/* Expanded Sub-course Container */
+.expanded {
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Sub-course Item */
+.sub-course {
+    font-size: 18px;
+    color: #333;
+    cursor: pointer;
+    padding: 8px;
+    background-color: #e6e6e6;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    transition: background-color 0.3s;
+}
+
+.sub-course:hover {
+    background-color: #d1b3ff;
+}
+
+/* Course Details Section */
+.course-details {
+    width: 100%;
+    max-width: 1800px;
+    text-align: center;
+    color: #333;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Courses Grid */
+.courses-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Course Card */
+.course-card {
+    width: 200px; /* Adjust width to better fit horizontal image */
+    position: relative;
+    perspective: 1000px;
+    transition: transform 0.3s;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+    text-align: center; /* Center text horizontally */
+    display: flex;
+    flex-direction: column; /* Keep column direction */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Align text and other elements horizontally */
+    padding: 15px;
+}
+
+/* Hover Effect for Course Card */
+.course-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Course Image */
+.course-image {
+    width: 100%; /* Full width to make the image horizontal */
+    height: 80px; /* Adjust height to fit horizontal aspect */
+    object-fit: cover;
+    border-radius: 8px; /* Slightly rounded corners for the image */
+    margin-bottom: 10px; /* Space between image and name */
+}
+
+/* Floating Thumbnail */
+.floating-thumbnail {
+    border: 1px solid #9373dd;
+    position: relative;
+    width: 100%; /* Full width of the card */
+    padding-top: 56.25%; /* Aspect ratio for landscape (16:9) */
+    overflow: hidden;
+    border-radius: 8px;
+    background: rgba(224, 224, 224, 0.15);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s;
+}
+
+.floating-thumbnail:hover {
+    transform: scale(1.05);
+}
+
+/* Course Name */
+.course-name {
+    margin-top: 10px; /* Space between image and name */
+    color: #7217db;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center; /* Ensure text is centered */
+    width: 100%;
+    display: block;
+}

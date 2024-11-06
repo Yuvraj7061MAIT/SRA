@@ -38,4 +38,5 @@ const MetricBox = ({ count, label }) => {
   );
 };
 
+
 export default LandingPage;

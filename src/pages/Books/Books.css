@@ -1,0 +1,102 @@
+/* Books Container */
+/* Page Wrapper */
+.books-page {
+    width: 100%;
+}
+
+/* Header Strip */
+.header-strip {
+    width: 100%;
+    background-color: #8a34db; /* Background color for the strip */
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    margin-bottom: 30px;
+}
+
+.header-strip h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0;
+}
+.books-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Subject Section Title */
+.subject-title {
+    font-size: 28px;
+    color: #333;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Book Cards Container */
+.book-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Book Card */
+.book-card {
+    width: 300px;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Book Image */
+.book-image {
+    width: 100%;
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+    background-color: #d1d5db; /* Fallback color */
+}
+
+/* Book Content */
+.book-content {
+    padding: 20px;
+}
+
+.book-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #2d3748;
+    margin-bottom: 15px;
+}
+
+/* Buy Button */
+.buy-button {
+    padding: 10px 20px;
+    background: linear-gradient(45deg, #AD49E1, #EBD3F8);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.buy-button:hover {
+    background: linear-gradient(45deg, #EBD3F8, #AD49E1);
+}

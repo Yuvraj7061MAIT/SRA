@@ -5,6 +5,14 @@ import logo from "../../assets/image/logo.png";
 import searchIcon from "../../assets/image/search_icon.svg";
 import "./Navbar.css";
 
+
+const login  = document.getElementsByClassName('login_nav__btn');
+let currentMode = "Light";
+
+const body = document.querySelector('body');
+
+login.addEventListener
+
 const Navbar = () => {
   return (
     <nav>
@@ -30,6 +38,7 @@ const Navbar = () => {
             Login
           </Link>
         </div>
+
       </div>
 
       {/* Bottom Navbar */}

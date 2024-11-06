@@ -1,0 +1,212 @@
+/* Main Container */
+.notes-container {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Exam and Subject Cards */
+.notes-cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Allows cards to wrap on smaller screens */
+}
+
+.notes-exam-card, .notes-subject-card {
+    width: 280px;
+    height: 180px;
+    background-color: #EBD3F8;
+    background-image: linear-gradient(43deg, #AD49E1 0%, #8d41b6 46%, #2E073F 100%);
+    border-radius: 12px;
+    color: white;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.notes-card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    color: white;
+}
+
+.notes-card-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.notes-card-para {
+    opacity: 0.8;
+    font-size: 14px;
+}
+
+.notes-exam-card:hover, .notes-subject-card:hover {
+    transform: rotateY(10deg) rotateX(10deg) scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.notes-exam-card:before, .notes-subject-card:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.1));
+    transition: transform 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+    z-index: 1;
+}
+
+.notes-exam-card:hover:before, .notes-subject-card:hover:before {
+    transform: translateX(-100%);
+}
+
+.notes-exam-card:after, .notes-subject-card:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.1));
+    transition: transform 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+    z-index: 1;
+}
+
+.notes-exam-card:hover:after, .notes-subject-card:hover:after {
+    transform: translateX(100%);
+}
+
+/* Subjects Container */
+.notes-subjects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+/* Glass Effect for Subject Cards */
+.glass-subject-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid purple;
+    border-radius: 10px;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    transition: transform 0.3s;
+    min-width: 150px;
+    text-align: center;
+}
+
+.glass-subject-card:hover {
+    transform: scale(1.05);
+}
+
+.glass-card-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #000;
+}
+
+.glass-card-para {
+    color: #ccc;
+}
+
+/* Chapter List Container */
+.notes-chapters-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+/* Individual Chapter Card */
+.chapter-card {
+    width: 100%;
+    padding: 15px 20px;
+    background: linear-gradient(90deg, #AD49E1 0%, #7A1CAC 100%);
+    color: #333;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background-color 0.3s;
+}
+
+.chapter-card:hover {
+    background-color: #EBD3F8;
+    color: #fff;
+}
+
+.chapter-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Read Button */
+.notes-read-button {
+    padding: 10px 20px;
+    background-color: #EBD3F8;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.notes-read-button:hover {
+    background-color: #7a50c8;
+    color: rgb(5, 0, 0);
+}
+/* Class Selection Container */
+.notes-class-selection {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.notes-class-selection h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Class Selection Buttons */
+.notes-class-selection button {
+    padding: 10px 20px;
+    margin: 5px;
+    background: linear-gradient(45deg, #AD49E1 0%, #8d41b6 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.notes-class-selection button:hover {
+    background: linear-gradient(45deg, #AD49E1 0%, #8d41b6 100%);
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+.notes-class-selection button:active {
+    transform: scale(0.95); /* Shrink slightly on click */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Reduced shadow on click */
+}

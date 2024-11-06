@@ -6,6 +6,7 @@ import About from '../About/About';
 import ExamCategories from '../ExamCategories/ExamCategories';
 import DemoForm from '../DemoClass/DemoForm';
 import LandingPage from '../LandingPage/LandingPage';
+import Footer from '../../components/Footer/Footer';
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
     <ExamCategories />
     <DemoForm />
     <LandingPage />
+    <Footer />
     </div>
   );
 };
