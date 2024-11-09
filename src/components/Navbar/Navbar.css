@@ -17,27 +17,10 @@ nav {
 .logo img {
     height: 40px; /* Logo height */
 }
-
-.search__box {
-    display: flex;
-    align-items: center;
-    border: 1px solid #ccc; /* Border around the search box */
-    border-radius: 20px; /* Rounded corners */
-    overflow: hidden; /* Clip the inner elements */
+.sra{
+    font-size: 24px;
+    color: #5528a8;
 }
-
-.search__icon {
-    padding: 10px;
-    background-color: #f4f4f4; /* Background for the search icon */
-}
-
-.input__field {
-    border: none; /* Remove default border */
-    padding: 10px;
-    outline: none; /* Remove outline */
-    width: 200px; /* Default width */
-}
-
 .nav__btns {
     display: flex;
     justify-content: center; /* Center items horizontally */
@@ -143,3 +126,4 @@ nav {
         cursor: pointer; /* Pointer for clickable icon */
     }
 }
+

@@ -1,4 +1,6 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useState ,useEffect, useRef } from 'react';
+import emailjs from 'emailjs-com';
+
 import './DemoForm.css'; // Ensure this file exists
 
 import v1 from '../../assets/videos/back1.mp4';
@@ -29,7 +31,7 @@ const DemoForm = () => {
     };
   }, []);
 
-  const [formData, setFormData] = React.useState({
+  const [formData, setFormData] = useState({
     studentName: '',
     parentEmail: '',
     phoneNumber: '',
@@ -43,7 +45,33 @@ const DemoForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form Data:', formData);
+
+    const { studentName, parentEmail, phoneNumber, message } = formData;
+
+    const templateParams = {
+      studentName,
+      parentEmail,
+      phoneNumber,
+      message
+    };
+
+    emailjs
+      .send(
+        'yuvraj_email',  // Replace with your EmailJS service ID
+        'yuvraj_template',  // Replace with your EmailJS template ID
+        templateParams,
+        'U-3T63zgk6Oh2YwZC'       // Replace with your EmailJS user ID
+      )
+      .then(
+        (response) => {
+          console.log('Email sent successfully', response);
+          alert('Your message has been sent!');
+        },
+        (error) => {
+          console.log('Error sending email', error);
+          alert('Failed to send message. Please try again later.');
+        }
+      );
   };
 
   return (

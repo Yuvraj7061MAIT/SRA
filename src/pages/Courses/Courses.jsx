@@ -1,95 +1,121 @@
 import React, { useState } from "react";
+import chapterData from "../../data/ChapterData2"; // Adjust the path if needed
 import "./Courses.css";
-import Banner from "../../components/Banner/Banner";
 
-// Import course data
-import physicsCourses from "../../data/PhysicsCourses";
-import chemistryCourses from "../../data/ChemistryCourses";
-import biologyCourses from "../../data/BiologyCourses";
-import mathsCourses from "../../data/MathsCourses"; // Assuming you have Maths course data
+const ChapterSelection = () => {
+  const [board, setBoard] = useState("IITJEE"); // Default board
+  const [subject, setSubject] = useState("Physics"); // Default subject
+  const [classLevel, setClassLevel] = useState("Class 11"); // Default class level
+  const [showSubjectCard, setShowSubjectCard] = useState(false);
+  const [showClassCard, setShowClassCard] = useState(false);
+  const [showChapters, setShowChapters] = useState(false);
 
-const Courses = () => {
-  const [selectedSubject, setSelectedSubject] = useState(null);
-  const [courses, setCourses] = useState([]);
-  const [hoveredTopic, setHoveredTopic] = useState(null);
+  // Get the list of available subjects for the selected board
+  const subjects = Object.keys(chapterData[board] || {});
 
-  const topics = [
-    { name: "IIT JEE", subCourses: ["Physics", "Chemistry", "Maths"] },
-    { name: "NEET", subCourses: ["Physics", "Chemistry", "Biology"] },
-    { name: "ICSE", subCourses: ["Physics", "Chemistry", "Biology", "Maths"] },
-    { name: "CBSE", subCourses: ["Physics", "Chemistry", "Biology", "Maths"] },
-  ];
+  // Get the list of available classes for the selected subject and board
+  const availableClasses = ["Class 11", "Class 12"];
 
-  // Handle subject click and load corresponding courses
-  const handleSubjectClick = (subject) => {
-    setSelectedSubject(subject);
-    if (subject === "Physics") {
-      setCourses(physicsCourses);
-    } else if (subject === "Chemistry") {
-      setCourses(chemistryCourses);
-    } else if (subject === "Biology") {
-      setCourses(biologyCourses);
-    } else if (subject === "Maths") {
-      setCourses(mathsCourses);
-    }
+  // Get chapters based on board, subject, and class level
+  const chapters = chapterData[board]?.[subject]?.[classLevel] || [];
+
+  const handleBoardClick = (boardName) => {
+    setBoard(boardName);
+    setShowSubjectCard(true);
+    setShowClassCard(false); // Hide class card initially
+    setSubject(Object.keys(chapterData[boardName])[0]); // Select first subject by default
+    setClassLevel("Class 11");
+    setShowChapters(false); // Hide chapters until all selections are made
+  };
+
+  const handleSubjectClick = (subjectName) => {
+    setSubject(subjectName);
+    setShowClassCard(true); // Show class card when subject is clicked
+    setShowChapters(false); // Hide chapters until class is selected
+  };
+
+  const handleClassClick = (className) => {
+    setClassLevel(className);
+    setShowChapters(true); // Show chapters after class selection
   };
 
   return (
-    <>
-      <Banner />
-      <div className="courses-page">
-        <div className="vertical-container">
-          {topics.map((topic, index) => (
+    <div className="chapter-selection-container">
+      <h1>Select Chapter</h1>
+
+      {/* Board Selection */}
+      <div className="card-container board-container">
+        {Object.keys(chapterData).map((boardName) => (
+          <div
+            key={boardName}
+            className="card board-card"
+            onClick={() => handleBoardClick(boardName)}
+          >
+            {boardName}
+          </div>
+        ))}
+      </div>
+
+      {/* Subject Selection */}
+      {showSubjectCard && (
+        <div className="card-container">
+          {subjects.map((subjectName) => (
             <div
-              key={index}
-              className="topic-item"
-              onMouseEnter={() => setHoveredTopic(index)}
-              onMouseLeave={() => setHoveredTopic(null)}
+              key={subjectName}
+              className="card subject-card"
+              onClick={() => handleSubjectClick(subjectName)}
             >
-              <h2>{topic.name}</h2>
-              {hoveredTopic === index && (
-                <div className="expanded">
-                  {topic.subCourses.map((subCourse, idx) => (
-                    <div
-                      key={idx}
-                      className="sub-course"
-                      onClick={() => handleSubjectClick(subCourse)}
-                    >
-                      {subCourse}
-                    </div>
-                  ))}
-                </div>
-              )}
+              {subjectName}
             </div>
           ))}
         </div>
+      )}
 
-        <div className="course-details">
-          <h3>
-            {selectedSubject
-              ? `Courses for ${selectedSubject}`
-              : "Select a subject to view courses"}
-          </h3>
-          <div className="courses-grid">
-            {courses.map((course) => (
-              <div key={course.id} className="course-card">
-                <div className="floating-thumbnail">
-                  <img
-                    src={course.thumbnail}
-                    alt={`${course.name}`}
-                    className="course-image"
-                  />
-                </div>
-                <div className="floating-text">
-                  <span className="course-name">{course.name}</span>
-                </div>
-              </div>
-            ))}
-          </div>
+      {/* Class Level Selection */}
+      {showClassCard && (
+        <div className="card-container">
+          {availableClasses.map((className) => (
+            <div
+              key={className}
+              className="card class-card"
+              onClick={() => handleClassClick(className)}
+            >
+              {className}
+            </div>
+          ))}
         </div>
-      </div>
-    </>
+      )}
+
+      {/* Display Chapters only after all selections */}
+      {showChapters && (
+        <div>
+          <h2>
+            Chapters for {subject} ({classLevel})
+          </h2>
+          {chapters.map((chapter, index) => (
+            <div key={index} className="chapter-container">
+              <div className="chapter-left">
+                <h3>{chapter.chapter}</h3>
+              </div>
+              <div className="chapter-right">
+                {chapter.youtubeLink ? (
+                  <a
+                    href={chapter.youtubeLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Watch Video
+                  </a>
+                ) : (
+                  <span>In Process</span>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
   );
 };
 
-export default Courses;
+export default ChapterSelection;

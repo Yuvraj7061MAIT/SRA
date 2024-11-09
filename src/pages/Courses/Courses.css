@@ -1,143 +1,214 @@
-/* General Styling for Courses Page */
-.courses-page {
+/* Chapter Selection Container */
+.chapter-selection-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    margin: 20px 0;
+    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    min-height: 100vh;
-    margin-top: 100px; /* Space under the banner */
 }
 
-/* Vertical Container */
-.vertical-container {
-    width: 100%;
-    max-width: 1100px;
-    background: #9373dd;
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-    padding: 20px;
-    margin-bottom: 30px;
-}
-
-/* Topic Item */
-.topic-item {
-    margin-bottom: 15px;
-    cursor: pointer;
-    padding: 10px;
-    border-radius: 8px;
-    transition: background-color 0.3s, transform 0.3s;
-    background: #f0f0f0;
-}
-
-.topic-item:hover {
-    background-color: #ececec;
-    transform: scale(1.02);
-}
-
-/* Expanded Sub-course Container */
-.expanded {
-    background: #f9f9f9;
-    padding: 10px;
-    border-radius: 8px;
-    margin-top: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-/* Sub-course Item */
-.sub-course {
-    font-size: 18px;
-    color: #333;
-    cursor: pointer;
-    padding: 8px;
-    background-color: #e6e6e6;
-    border-radius: 4px;
-    margin-bottom: 5px;
-    transition: background-color 0.3s;
-}
-
-.sub-course:hover {
-    background-color: #d1b3ff;
-}
-
-/* Course Details Section */
-.course-details {
-    width: 100%;
-    max-width: 1800px;
-    text-align: center;
-    color: #333;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-}
-
-/* Courses Grid */
-.courses-grid {
+/* Card Container */
+.card-container {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
     justify-content: center;
-    margin-top: 20px;
+    gap: 15px;
+    margin: 20px 0;
+    flex-wrap: wrap;
 }
 
-/* Course Card */
-.course-card {
-    width: 200px; /* Adjust width to better fit horizontal image */
-    position: relative;
-    perspective: 1000px;
-    transition: transform 0.3s;
-    cursor: pointer;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    background-color: #fff;
-    text-align: center; /* Center text horizontally */
-    display: flex;
-    flex-direction: column; /* Keep column direction */
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Align text and other elements horizontally */
-    padding: 15px;
-}
-
-/* Hover Effect for Course Card */
-.course-card:hover {
-    transform: translateY(-5px);
-}
-
-/* Course Image */
-.course-image {
-    width: 100%; /* Full width to make the image horizontal */
-    height: 80px; /* Adjust height to fit horizontal aspect */
-    object-fit: cover;
-    border-radius: 8px; /* Slightly rounded corners for the image */
-    margin-bottom: 10px; /* Space between image and name */
-}
-
-/* Floating Thumbnail */
-.floating-thumbnail {
-    border: 1px solid #9373dd;
-    position: relative;
-    width: 100%; /* Full width of the card */
-    padding-top: 56.25%; /* Aspect ratio for landscape (16:9) */
-    overflow: hidden;
+.card {
+    background-color: #7a50c8;
+    color: white;
+    padding: 15px 25px;
     border-radius: 8px;
-    background: rgba(224, 224, 224, 0.15);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
-    transition: transform 0.3s;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-size: 1.2rem;
+    width: 200px;
 }
 
-.floating-thumbnail:hover {
+.card:hover {
     transform: scale(1.05);
+    background-color: #5e32a5;
 }
 
-/* Course Name */
-.course-name {
-    margin-top: 10px; /* Space between image and name */
-    color: #7217db;
-    font-size: 16px;
+.board-card {
+    font-size: 1.5rem;
+    width: 250px;
+}
+
+.subject-card, .class-card {
+    font-size: 1.2rem;
+    width: 200px;
+}
+
+.class-card {
+    font-size: 1.1rem;
+    width: 150px;
+}
+
+/* Chapter Container */
+.chapter-container {
+    width: 90vw;  /* Full viewport width */
+    max-width: 100%;  /* Ensure it doesn't exceed screen width */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 10px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.chapter-left {
+    flex: 1;
+    text-align: left;
+}
+
+.chapter-right a {
+    text-decoration: none;
+    color: #7a50c8;
     font-weight: bold;
-    text-align: center; /* Ensure text is centered */
-    width: 100%;
-    display: block;
+    transition: color 0.3s ease;
+}
+
+.chapter-right a:hover {
+    color: #5e32a5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .chapter-container {
+        width: 100%;  /* Adjust to full width for medium screens */
+        padding: 15px;
+    }
+
+    .chapter-right a {
+        font-size: 1rem; /* Adjust font size for better readability */
+    }
+
+    /* Card Container */
+    .card-container {
+        flex-direction: row;  /* Change to horizontal layout */
+        align-items: flex-start;  /* Align items to start of the container */
+        justify-content: space-between;  /* Space out the items */
+    }
+
+    .card {
+        width: 45%;  /* Make cards take up 45% of the container */
+        margin: 10px 0;
+        font-size: 1.1rem; /* Adjust card text size */
+    }
+}
+
+@media (max-width: 768px) {
+    .chapter-container {
+        flex-direction: row;  /* Change to horizontal layout for mobile */
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px;
+    }
+
+    .chapter-left {
+        text-align: left;
+        margin-right: 10px;
+        width: 45%;  /* Take up 45% of the container */
+    }
+
+    .chapter-right {
+        width: 45%;  /* Take up 45% of the container */
+        text-align: right;
+    }
+
+    .chapter-right a {
+        width: 100%;  /* Full width for mobile */
+        padding: 10px;
+        text-align: center;
+        font-size: 1rem;  /* Adjust font size */
+    }
+
+    /* Card Container */
+    .card-container {
+        flex-direction: row;  /* Cards side-by-side */
+        flex-wrap: wrap;
+        justify-content: space-around;  /* Space out cards evenly */
+    }
+
+    .card {
+        width: 45%;  /* Cards take up 45% of the width */
+        margin: 10px 0;
+        font-size: 1rem; /* Adjust text size for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .chapter-container {
+        padding: 10px;
+        margin: 8px 0;
+        flex-direction: column;  /* Stack vertically for very small screens */
+    }
+
+    .chapter-left {
+        text-align: left;
+        width: 100%;  /* Take up full width */
+    }
+
+    .chapter-right {
+        width: 100%;  /* Take up full width */
+        text-align: left;
+    }
+
+    .chapter-right a {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    /* Card Container */
+    .card-container {
+        flex-direction: column;  /* Stack cards vertically */
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;  /* Cards take up almost full width */
+        margin: 10px 0;
+        font-size: 1rem; /* Adjust text size for mobile */
+    }
+}
+
+/* Heading Styles */
+h1, h2, h3 {
+    font-family: 'Arial', sans-serif;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .chapter-selection-container {
+        padding: 15px;
+    }
+
+    .card-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .card {
+        width: 45%;
+    }
+
+    .chapter-container {
+        padding: 15px;
+    }
+
+    .chapter-right a {
+        font-size: 0.9rem;
+    }
 }

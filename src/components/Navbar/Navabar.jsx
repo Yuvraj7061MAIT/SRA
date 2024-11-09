@@ -1,8 +1,7 @@
 // src/components/Navbar.jsx
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../../assets/image/logo.png";
-import searchIcon from "../../assets/image/search_icon.svg";
+import logo from "../../assets/image/sra_logo.jpg";
 import "./Navbar.css";
 
 
@@ -20,19 +19,12 @@ const Navbar = () => {
       <div className="top__navbar">
         <Link to="/" className="logo">
           <img src={logo} alt="logo" />
+
         </Link>
-        <div className="search__box">
-          <div className="search__icon">
-            <img src={searchIcon} alt="search icon" />
-          </div>
-          <input
-            type="search"
-            maxLength="30"
-            placeholder="What do you want to learn?"
-            autoComplete="off"
-            className="input__field"
-          />
+        <div className="sra">
+        <b>SRA ACADEMY</b>
         </div>
+        
         <div className="nav__btns primary__btn">
           <Link to="/login" className="login_nav__btn">
             Login
@@ -60,8 +52,8 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link to="/teachers" className="navlink">
-              <span className="material-icons"></span> Our Teachers
+            <Link to="/results" className="navlink">
+              <span className="material-icons"></span> Our Results
             </Link>
           </li>
           <li>

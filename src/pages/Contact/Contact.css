@@ -1,0 +1,118 @@
+/* Contact Page Styles */
+.contact-page {
+    background-color: #f9fafb;
+  }
+  
+  .contact-page .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .contact-page h1 {
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .contact-page .contact-details {
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+  }
+  
+  .contact-page .contact-details h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+  
+  .contact-page .contact-details p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  
+  .social-icons a {
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+  
+  .social-icons a:hover {
+    transform: scale(1.1);
+  }
+  
+  .social-icons svg {
+    height: 40px;
+    width: 40px;
+    color: #555;
+    transition: color 0.3s ease;
+  }
+  
+  .social-icons svg:hover {
+    color: #0077b5; /* LinkedIn Blue */
+  }
+  
+  /* Facebook Icon */
+  .social-icons a:first-child svg:hover {
+    color: #1877f2; /* Facebook Blue */
+  }
+  
+  /* Twitter Icon */
+  .social-icons a:nth-child(3) svg:hover {
+    color: #1da1f2; /* Twitter Blue */
+  }
+  
+  /* Mobile Responsiveness */
+  @media screen and (max-width: 768px) {
+    .contact-page h1 {
+      font-size: 2rem;
+    }
+  
+    .contact-page .contact-details {
+      padding: 1.5rem;
+    }
+  
+    .social-icons {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .social-icons a {
+      margin: 0.5rem;
+    }
+  
+    .social-icons svg {
+      height: 35px;
+      width: 35px;
+    }
+  }
+  
+  /* Tablet and Small Screen */
+  @media screen and (max-width: 480px) {
+    .contact-page h1 {
+      font-size: 1.8rem;
+    }
+  
+    .contact-page .contact-details {
+      padding: 1.2rem;
+    }
+  
+    .social-icons svg {
+      height: 30px;
+      width: 30px;
+    }
+  
+    .social-icons a {
+      margin: 0.5rem;
+    }
+  }
+  
