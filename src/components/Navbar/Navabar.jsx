@@ -19,49 +19,35 @@ const Navbar = () => {
       <div className="top__navbar">
         <Link to="/" className="logo">
           <img src={logo} alt="logo" />
-
         </Link>
         <div className="sra">
-        <b>SRA ACADEMY</b>
+          <b>SRA ACADEMY</b>
         </div>
-        
+
         <div className="nav__btns primary__btn">
           <Link to="/login" className="login_nav__btn">
             Login
           </Link>
         </div>
-
       </div>
 
       {/* Bottom Navbar */}
       <div className="header__navbar">
         <ul className="navlist">
           <li>
-            <Link to="/" className="navlink">
-              <span className="material-icons"></span> Home
-            </Link>
+            <Link to="/" className="navlink">Home</Link>
           </li>
           <li>
-            <Link to="/courses" className="navlink">
-              <span className="material-icons"></span> Courses
-            </Link>
+            <Link to="/courses" className="navlink">Courses</Link>
           </li>
           <li>
-            <Link to="/notes" className="navlink">
-              <span className="material-icons"></span> Notes
-            </Link>
+            <Link to="/notes" className="navlink">Notes</Link>
           </li>
           <li>
-            <Link to="/results" className="navlink">
-              <span className="material-icons"></span> Our Results
-            </Link>
+            <Link to="/results" className="navlink">Our Results</Link>
           </li>
           <li>
-            <Link to="/contact" className="navlink">
-              <span className="material-icons"></span> Contact
-            </Link>
-          </li>
-          <li>
+            <Link to="/contact" className="navlink">Contact</Link>
           </li>
         </ul>
       </div>
