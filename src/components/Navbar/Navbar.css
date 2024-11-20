@@ -1,8 +1,9 @@
 /* General Navbar Styles */
 nav {
-    background-color: #ffffff; /* Background color for the navbar */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
+    position: relative;
 }
 
 .top__navbar {
@@ -10,10 +11,11 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
+    z-index: 1;
 }
 
 .logo img {
-    height: 40px; /* Logo height */
+    height: 40px;
 }
 
 .sra {
@@ -24,75 +26,163 @@ nav {
 .nav__btns {
     display: flex;
     align-items: center;
-    gap: 10px; /* Space between buttons */
+    gap: 10px;
 }
 
 .primary__btn {
-    background-color: #7349d4; /* Primary button color */
+    background-color: #7349d4;
     width: 150px;
     height: 50px;
-    border-radius: 10px; /* Rounded corners */
+    border-radius: 10px;
     text-align: center;
-    padding: 10px 15px; /* Padding for buttons */
-    transition: background-color 0.3s; /* Transition for hover effect */
+    padding: 10px 15px;
+    transition: background-color 0.3s;
 }
 
 .login_nav__btn {
     color: white;
-    text-decoration: none; /* Remove underline */
+    text-decoration: none;
 }
 
 .primary__btn:hover {
-    background-color: #0056b3; /* Darker shade on hover */
+    background-color: #0056b3;
 }
 
-/* Bottom Navbar */
-.header__navbar {
-    background-color: #f8f9fa; /* Background for the bottom navbar */
-    padding: 10px 0;
+.hamburger-menu {
+    display: none;
+    font-size: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.logout{
+    font-weight: bold;
+    transition: display 0.3s ease;
+    background-color: #7349d4 !important;;
+    width: 200px;
+    height: 36px;
+    border-radius: 10px;   
+}
+/* Show logout button when profile icon is clicked */
+.profile:hover .logout-btn {
+    display: block;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100%;
+    background-color: #f8f9fa;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: right 0.3s ease;
+    z-index: 3;
+}
+
+.sidebar.open {
+    right: 0;
+}
+
+.sidebar .close-btn {
+    font-size: 30px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
 .navlist {
-    list-style-type: none; /* Remove default list styling */
-    display: flex; /* Horizontal layout by default */
-    justify-content: space-around; /* Space items evenly */
-    padding: 10px 0; /* Vertical padding */
+    list-style-type: none;
+    padding: 0;
     margin: 0;
-    width: 100%;
 }
 
 .navlink {
-    text-decoration: none; /* Remove underline */
-    color: #333; /* Text color */
-    font-weight: 500; /* Font weight for links */
+    display: block;
+    padding: 10px 20px;
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    margin-right: 10px;
 }
 
 .navlink:hover {
-    color: #007bff; /* Change color on hover */
+    color: #007bff;
+    background-color: #e0e0e0;
 }
 
-/* Responsive Styles */
+/* Responsive Styles for Mobile */
 @media (max-width: 768px) {
-    .top__navbar {
-        flex-direction: column; /* Stack items vertically */
-        align-items: flex-start;
-        width: 100%; /* Full width */
+    .header__navbar {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    .sidebar {
+        display: block;
+    }
+
+    .sidebar.open {
+        display: block;
+    }
+
+    .profile__icon {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+    }
+
+    .profile:hover .logout-btn {
+        display: none; /* Hide logout button by default */
+    }
+
+    .profile__icon:hover ~ .logout-btn {
+        display: block; /* Show logout button when profile icon is hovered */
+    }
+
+    .sra {
+        display: none;
+    }
+}
+
+/* Desktop Styles */
+@media (min-width: 769px) {
+    .hamburger-menu {
+        display: none;
+    }
+
+    .sidebar {
+        display: none;
     }
 
     .header__navbar {
-        width: 100%; /* Full width */
+        display: flex;
+        justify-content: center;
+        width: 100%;
     }
 
     .navlist {
-        flex-direction: column; /* Stack menu items vertically */
-        align-items: flex-start; /* Align items to the left */
-        gap: 10px; /* Space between items */
-        padding: 10px 20px;
-        display: flex; /* Ensure it remains displayed */
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
     }
 
     .navlink {
-        padding: 10px 0; /* Space between links */
-        width: 100%; /* Full width for each link */
+        padding: 15px 30px;
     }
 }

@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import chapterData from "../../data/ChapterData";
+import chapterData from "../../data/ChapterData2";
 import "./Notes.css";
 import Books from "../Books/Books";
-
 
 const Notes = () => {
   const navigate = useNavigate(); // Initialize navigate function from react-router-dom
@@ -35,11 +34,13 @@ const Notes = () => {
   };
 
   const navigateToChapterNotes = (chapter) => {
-    setPdfUrl(chapter.pdf);
-    setIsPdfView(true);
+    if (chapter.pdf) {
+      setPdfUrl(chapter.pdf);
+      setIsPdfView(true);
 
-    // Navigate to the new page with the PDF URL as a state
-    navigate("/chapter-notes", { state: { pdfUrl: chapter.pdf } });
+      // Navigate to the new page with the PDF URL as a state
+      navigate("/chapter-notes", { state: { pdfUrl: chapter.pdf } });
+    }
   };
 
   const handleClosePdfView = () => {
@@ -99,13 +100,18 @@ const Notes = () => {
           <div className="notes-chapters-container">
             {chapterData[selectedExam][selectedSubject][selectedClass].map(
               (chapter, index) => (
-                <div
-                  key={index}
-                  className="chapter-card"
-                  onClick={() => navigateToChapterNotes(chapter)}
-                >
+                <div key={index} className="chapter-card">
                   <span className="chapter-title">{chapter.chapter}</span>
-                  <button className="notes-read-button">Read</button>
+                  {chapter.pdf ? (
+                    <button
+                      className="notes-read-button"
+                      onClick={() => navigateToChapterNotes(chapter)}
+                    >
+                      Read
+                    </button>
+                  ) : (
+                    <span className="not-uploaded">Not yet uploaded</span>
+                  )}
                 </div>
               )
             )}

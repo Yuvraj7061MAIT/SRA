@@ -3,25 +3,24 @@ import './Books.css';
 
 const booksData = {
   Physics: [
-    { name: "Concepts of Physics by H.C. Verma", image: "link_to_image1" },
-    { name: "Fundamentals of Physics by Halliday, Resnick, and Walker", image: "link_to_image2" },
-    { name: "Problems in General Physics by I.E. Irodov", image: "link_to_image3" },
+    { name: "Concepts of Physics by H.C. Verma" },
+    { name: "Fundamentals of Physics by Halliday, Resnick, and Walker" },
+    { name: "Problems in General Physics by I.E. Irodov" },
   ],
   Chemistry: [
-    { name: "Organic Chemistry by Morrison and Boyd", image: "link_to_image4" },
-    { name: "Concise Inorganic Chemistry by J.D. Lee", image: "link_to_image5" },
-    { name: "Physical Chemistry by P.W. Atkins", image: "link_to_image6" },
+    { name: "Organic Chemistry by Morrison and Boyd" },
+    { name: "Concise Inorganic Chemistry by J.D. Lee" },
+    { name: "Physical Chemistry by P.W. Atkins" },
   ],
   Maths: [
-    { name: "IIT Mathematics by M.L. Khanna", image: "link_to_image7" },
-    { name: "Higher Algebra by Hall and Knight", image: "link_to_image8" },
-    { name: "Problems in Calculus of One Variable by I.A. Maron", image: "link_to_image9" },
+    { name: "IIT Mathematics by M.L. Khanna" },
+    { name: "Higher Algebra by Hall and Knight" },
+    { name: "Problems in Calculus of One Variable by I.A. Maron" },
   ],
   Biology: [
-    { name: "Biology by Campbell and Reece", image: "link_to_image10" },
-    { name: "Trueman’s Elementary Biology Vol 1 & 2", image: "link_to_image11" },
-    { name: "Objective Biology by Dinesh", image: "link_to_image12" },
-    
+    { name: "Biology by Campbell and Reece" },
+    { name: "Trueman’s Elementary Biology Vol 1 & 2" },
+    { name: "Objective Biology by Dinesh" },
   ],
 };
 
@@ -38,7 +37,6 @@ const Books = () => {
               <div className="book-cards-container">
                 {booksData[subject].map((book, index) => (
                   <div key={index} className="book-card">
-                    <div className="book-image" style={{ backgroundImage: `url(${book.image})` }}></div>
                     <div className="book-content">
                       <h5 className="book-title">{book.name}</h5>
                       <button className="buy-button">Buy</button>

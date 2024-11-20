@@ -15,7 +15,7 @@
 .banner__slides img {
     width: 100%; /* Full width */
     height: auto; /* Allow height to adjust automatically */
-    max-height: 70vh; /* Adjusted maximum height for a smaller banner */
+    max-height: 100vh; /* Maximum height to keep it within the viewport */
     object-fit: cover; /* Cover the section while preserving aspect ratio */
 }
 

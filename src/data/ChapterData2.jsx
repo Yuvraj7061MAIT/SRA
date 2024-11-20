@@ -6,17 +6,17 @@ const chapterData2 = {
       "Class 11": [
         {
           chapter: "Physical World",
-          pdf: "/path/to/physical-world.pdf",
+          pdf: "",
           youtubeLink: "https://www.youtube.com/playlist?list=xyz103",
         },
         {
           chapter: "Units and Measurement",
-          pdf: "/path/to/units-and-measurement.pdf",
+          pdf: "",
           youtubeLink: "",
         },
         {
           chapter: "Motion in a Straight Line",
-          pdf: "/path/to/motion-straight-line.pdf",
+          pdf: "",
           youtubeLink: "https://www.youtube.com/playlist?list=xyz103",
         },
         {
