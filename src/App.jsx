@@ -30,7 +30,7 @@ const AppWithRouter = () => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
     });
-    
+
     return () => unsubscribe(); // Clean up listener on component unmount
   }, []);
 
@@ -40,15 +40,19 @@ const AppWithRouter = () => {
       {location.pathname !== '/chapter-notes' && <Header />}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/courses" element={user ? <Courses /> : <Navigate to="/login" />} />
-        <Route path="/notes" element={user ? <Notes /> : <Navigate to="/login" />} />
+        <Route path="/courses" element={<Courses />} /> {/* Unrestricted access */}
+        <Route path="/notes" element={<Notes />} /> {/* Unrestricted access */}
         <Route path="/chapter-notes" element={<ChapterNotes />} />
-        <Route path="/results" element={user ? <Results /> : <Navigate to="/login" />} />
+        <Route path="/results" element={<Results />} /> {/* Unrestricted access */}
         <Route path="/contact" element={<Contact />} />
-        <Route path="/login" element={user ? <Navigate to="/" /> : <Login />} />  {/* Redirect logged-in users to home */}
+        <Route
+          path="/login"
+          element={user ? <Navigate to="/" /> : <Login />}
+        /> {/* Redirect logged-in users to home */}
       </Routes>
     </div>
   );
 };
+
 
 export default App;

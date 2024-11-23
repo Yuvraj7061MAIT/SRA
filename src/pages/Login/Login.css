@@ -1,0 +1,150 @@
+/* Crystal Login Page Styles */
+.crystal-login-page {
+    margin-top: -10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 85vh;
+    padding: 20px;
+}
+
+/* Container Styling */
+.crystal-login-container {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 40px 30px;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    animation: crystalFadeIn 1s ease-in-out;
+}
+
+/* Title Styling */
+.crystal-login-title {
+    font-family: 'Arial', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+/* Input Styling */
+.crystal-input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    outline: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.crystal-input:focus {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Buttons Styling */
+.crystal-button, .crystal-google-button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.crystal-button {
+    background: #6a11cb;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+}
+
+.crystal-google-button {
+    background: #db4437;
+    background: linear-gradient(135deg, #db4437, #ff6b6b);
+}
+
+.crystal-button:hover, .crystal-google-button:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+}
+
+/* Login/Register Toggle Text */
+.crystal-toggle {
+    margin-top: 20px;
+    color: #ffffff;
+    font-size: 0.9rem;
+}
+
+.crystal-link {
+    color: #6a11cb;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.crystal-link:hover {
+    color: #2575fc;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .crystal-login-container {
+        width: 90%;
+        padding: 30px 20px;
+    }
+
+    .crystal-login-title {
+        font-size: 1.8rem;
+    }
+
+    .crystal-input {
+        font-size: 0.9rem;
+    }
+
+    .crystal-button, .crystal-google-button {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .crystal-login-container {
+        padding: 20px 15px;
+    }
+
+    .crystal-login-title {
+        font-size: 1.5rem;
+    }
+
+    .crystal-input {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+
+    .crystal-button, .crystal-google-button {
+        font-size: 0.8rem;
+    }
+}
+
+/* Animation */
+@keyframes crystalFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

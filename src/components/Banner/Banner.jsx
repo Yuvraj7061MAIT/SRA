@@ -2,10 +2,10 @@
 import React from "react";
 import "./Banner.css"; // Your custom styles
 
-import banner1 from "../../assets/image/banner5.jpg";
-import banner2 from "../../assets/image/banner2.jpg";
-import banner3 from "../../assets/image/banner3.jpg";
-import banner4 from "../../assets/image/banner4.jpg";
+import banner1 from "../../../public/images/banner5.jpg";
+import banner2 from "../../../public/images/banner2.jpg";
+import banner3 from "../../../public/images//banner3.jpg";
+import banner4 from "../../../public/images//banner4.jpg";
 
 const Banner = () => {
     return (

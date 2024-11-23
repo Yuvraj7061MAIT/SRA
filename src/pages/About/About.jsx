@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
-import sraImage from '../../assets/image/rohit.png'; // Replace with your image path
+import sraImage from '../../../public/images/rohit.png'; // Replace with your image path
 import './About.css'; // Import the CSS file
 
 const About = () => {

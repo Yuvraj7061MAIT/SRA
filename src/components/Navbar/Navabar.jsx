@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import logo from "../../assets/image/sra_logo.jpg";
-import { signInWithEmailAndPassword, signOut, onAuthStateChanged } from "firebase/auth";
+import logo from "../../../public/images/sra_logo.jpg";
+import { signOut, onAuthStateChanged } from "firebase/auth"; // Removed unused signInWithEmailAndPassword import
 import { auth } from "../../firebaseConfig";
 import "./Navbar.css";
 
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [user, setUser] = useState(null);
-  const navigate = useNavigate();  // Hook for navigation
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Listen for authentication state changes
@@ -22,19 +22,9 @@ const Navbar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
-  const handleLogin = async (email, password) => {
-    try {
-      await signInWithEmailAndPassword(auth, email, password);
-      // Ensure the user state is updated and then navigate
-      navigate("/");  // Redirect to / when logged in
-    } catch (error) {
-      console.error("Login error: ", error);
-    }
-  };
-
   const handleLogout = () => {
     signOut(auth);
-    navigate("/");  // Redirect to / when logged out
+    navigate("/"); // Redirect to the homepage after logout
   };
 
   return (
@@ -47,7 +37,6 @@ const Navbar = () => {
         <div className="sra">
           <b>SRA ACADEMY</b>
         </div>
-
         <div className="nav__btns primary__btn">
           {user ? (
             <button onClick={handleLogout} className="logout">
@@ -73,19 +62,29 @@ const Navbar = () => {
         </button>
         <ul className="navlist">
           <li>
-            <Link to="/" className="navlink" onClick={toggleSidebar}>Home</Link>
+            <Link to="/" className="navlink" onClick={toggleSidebar}>
+              Home
+            </Link>
           </li>
           <li>
-            <Link to="/courses" className="navlink" onClick={toggleSidebar}>Courses</Link>
+            <Link to="/courses" className="navlink" onClick={toggleSidebar}>
+              Courses
+            </Link>
           </li>
           <li>
-            <Link to="/notes" className="navlink" onClick={toggleSidebar}>Notes</Link>
+            <Link to="/notes" className="navlink" onClick={toggleSidebar}>
+              Notes
+            </Link>
           </li>
           <li>
-            <Link to="/results" className="navlink" onClick={toggleSidebar}>Our Results</Link>
+            <Link to="/results" className="navlink" onClick={toggleSidebar}>
+              Our Results
+            </Link>
           </li>
           <li>
-            <Link to="/contact" className="navlink" onClick={toggleSidebar}>Contact</Link>
+            <Link to="/contact" className="navlink" onClick={toggleSidebar}>
+              Contact
+            </Link>
           </li>
         </ul>
       </div>

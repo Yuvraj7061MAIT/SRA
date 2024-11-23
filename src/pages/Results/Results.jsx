@@ -2,18 +2,18 @@ import React from 'react';
 import './Results.css';
 
 // Import images from the assets/images folder
-import image1 from '../../assets/image/banner1.jpg';
-import image2 from '../../assets/image/banner2.jpg';
-import image3 from '../../assets/image/banner2.jpg';
-import image4 from '../../assets/image/banner2.jpg';
-import image5 from '../../assets/image/banner2.jpg';
-import image6 from '../../assets/image/banner2.jpg';
-import image7 from '../../assets/image/banner2.jpg';
-import image8 from '../../assets/image/banner2.jpg';
-import image9 from '../../assets/image/banner2.jpg';
-import image10 from '../../assets/image/banner2.jpg';
-import image11 from '../../assets/image/banner2.jpg';
-import image12 from '../../assets/image/banner2.jpg';
+import image1 from '../../../public/images/banner1.jpg';
+import image2 from '../../../public/images/banner1.jpg';
+import image3 from '../../../public/images/banner1.jpg';
+import image4 from '../../../public/images/banner1.jpg';
+import image5 from '../../../public/images/banner1.jpg';
+import image6 from '../../../public/images/banner1.jpg';
+import image7 from '../../../public/images/banner1.jpg';
+import image8 from '../../../public/images/banner1.jpg';
+import image9 from '../../../public/images/banner1.jpg';
+import image10 from '../../../public/images/banner1.jpg';
+import image11 from '../../../public/images/banner1.jpg';
+import image12 from '../../../public/images/banner1.jpg';
 
 const teachersData = {
   IITJEE: [

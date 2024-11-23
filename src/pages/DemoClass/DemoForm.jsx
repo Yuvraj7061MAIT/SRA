@@ -3,7 +3,7 @@ import emailjs from 'emailjs-com';
 
 import './DemoForm.css'; // Ensure this file exists
 
-import v1 from '../../assets/videos/back1.mp4';
+import v1 from '../../../public/videos/back1.mp4';
 
 const DemoForm = () => {
   const videoRef = useRef(null);

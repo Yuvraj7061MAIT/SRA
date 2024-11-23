@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { getAuth , onAuthStateChanged } from "firebase/auth";
+import { app as firebaseApp} from "../../firebaseConfig"
 import chapterData from "../../data/ChapterData2"; // Adjust the path if needed
 import "./Courses.css";
 
@@ -9,6 +13,18 @@ const ChapterSelection = () => {
   const [showSubjectCard, setShowSubjectCard] = useState(false);
   const [showClassCard, setShowClassCard] = useState(false);
   const [showChapters, setShowChapters] = useState(false);
+  const [user, setUser] = useState(null); // To track the user login status
+  const navigate = useNavigate();
+
+  // Firebase authentication state listener
+  useEffect(() => {
+    const auth = getAuth(firebaseApp); // Initialize Firebase Authentication
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser); // Update the user state
+    });
+
+    return () => unsubscribe(); // Clean up listener on component unmount
+  }, []);
 
   // Get the list of available subjects for the selected board
   const subjects = Object.keys(chapterData[board] || {});
@@ -37,6 +53,18 @@ const ChapterSelection = () => {
   const handleClassClick = (className) => {
     setClassLevel(className);
     setShowChapters(true); // Show chapters after class selection
+  };
+
+  const handleVideoClick = (chapter) => {
+    if (!user) {
+      // If not logged in, show alert and redirect to login page
+      alert("Please log in to watch the full content.");
+      navigate("/login");
+      return;
+    }
+
+    // If logged in, allow to watch video
+    window.open(chapter.youtubeLink, "_blank");
   };
 
   return (
@@ -99,12 +127,22 @@ const ChapterSelection = () => {
               </div>
               <div className="chapter-right">
                 {chapter.youtubeLink ? (
+                  <button
+                    className="watch-video-button"
+                    onClick={() => handleVideoClick(chapter)}
+                  >
+                    Watch Video
+                  </button>
+                ) : (
+                  <span>In Process</span>
+                )}
+                {chapter.Intro ? (
                   <a
-                    href={chapter.youtubeLink}
+                    href={chapter.Intro}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Watch Video
+                    Watch Intro
                   </a>
                 ) : (
                   <span>In Process</span>

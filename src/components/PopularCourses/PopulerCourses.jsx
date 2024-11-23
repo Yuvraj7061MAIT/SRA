@@ -3,10 +3,10 @@ import React from 'react';
 import './PopularCourses.css'; // Your custom styles
 
 // Import your icon images
-import IITIcon from '../../assets/image/IIT.jpg'; // Replace with your actual icon path
-import ICSEIcon from '../../assets/image/icse.jpg'; // Replace with your actual icon path
-import CBSEIcon from '../../assets/image/cbse.png'; // Replace with your actual icon path
-import OtherIcon from '../../assets/image/neet.png'; // Replace with your actual icon path
+import IITIcon from '../../../public/images/IIT.jpg'; // Replace with your actual icon path
+import ICSEIcon from '../../../public/images/icse.jpg'; // Replace with your actual icon path
+import CBSEIcon from '../../../public/images/cbse.png'; // Replace with your actual icon path
+import OtherIcon from '../../../public/images/neet.png'; // Replace with your actual icon path
 
 const PopularCourses = () => {
     return (

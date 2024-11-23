@@ -44,7 +44,8 @@
     width: 250px;
 }
 
-.subject-card, .class-card {
+.subject-card,
+.class-card {
     font-size: 1.2rem;
     width: 200px;
 }
@@ -56,8 +57,8 @@
 
 /* Chapter Container */
 .chapter-container {
-    width: 90vw;  /* Full viewport width */
-    max-width: 100%;  /* Ensure it doesn't exceed screen width */
+    width: 90vw;
+    max-width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -73,79 +74,118 @@
     text-align: left;
 }
 
+.chapter-right {
+    display: flex;
+    gap: 15px; /* Add space between buttons */
+    flex-wrap: wrap; /* Ensure responsiveness */
+}
+
+/* Button Styling */
 .chapter-right a {
     text-decoration: none;
-    color: #7a50c8;
+    color: #fff;
+    background-color: #7a50c8;
     font-weight: bold;
-    transition: color 0.3s ease;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
 }
 
 .chapter-right a:hover {
-    color: #5e32a5;
+    background-color: #5e32a5;
+    transform: translateY(-2px);
 }
+
+.chapter-right span {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background-color: #ccc;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Watch Video Button Styling */
+.watch-video-button {
+    background-color: #7a50c8;
+    color: white;
+    font-weight: bold;
+    padding: 12px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    border: none;
+  }
+  
+  .watch-video-button:hover {
+    background-color: #5e32a5;
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .watch-video-button:active {
+    transform: scale(1);
+    background-color: #4c1a88;
+  }
+  
+  .watch-video-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(122, 80, 200, 0.6);
+  }
+  
+  /* For accessibility and smoother interaction */
+  .watch-video-button span {
+    display: inline-block;
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .watch-video-button:hover span {
+    transform: translateX(5px);
+  }
+  
 
 /* Responsive adjustments */
 @media (max-width: 1024px) {
     .chapter-container {
-        width: 100%;  /* Adjust to full width for medium screens */
+        width: 100%;
         padding: 15px;
     }
 
-    .chapter-right a {
-        font-size: 1rem; /* Adjust font size for better readability */
+    .chapter-right {
+        justify-content: center;
+        gap: 10px; /* Adjust gap for smaller screens */
     }
 
-    /* Card Container */
-    .card-container {
-        flex-direction: row;  /* Change to horizontal layout */
-        align-items: flex-start;  /* Align items to start of the container */
-        justify-content: space-between;  /* Space out the items */
-    }
-
-    .card {
-        width: 45%;  /* Make cards take up 45% of the container */
-        margin: 10px 0;
-        font-size: 1.1rem; /* Adjust card text size */
+    .chapter-right a, .chapter-right span {
+        font-size: 0.9rem;
+        padding: 8px 16px;
     }
 }
 
 @media (max-width: 768px) {
     .chapter-container {
-        flex-direction: row;  /* Change to horizontal layout for mobile */
-        align-items: center;
-        justify-content: space-between;
-        padding: 15px;
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     .chapter-left {
-        text-align: left;
-        margin-right: 10px;
-        width: 45%;  /* Take up 45% of the container */
+        margin-bottom: 10px;
     }
 
     .chapter-right {
-        width: 45%;  /* Take up 45% of the container */
-        text-align: right;
+        justify-content: flex-start;
     }
 
-    .chapter-right a {
-        width: 100%;  /* Full width for mobile */
-        padding: 10px;
-        text-align: center;
-        font-size: 1rem;  /* Adjust font size */
-    }
-
-    /* Card Container */
-    .card-container {
-        flex-direction: row;  /* Cards side-by-side */
-        flex-wrap: wrap;
-        justify-content: space-around;  /* Space out cards evenly */
-    }
-
-    .card {
-        width: 45%;  /* Cards take up 45% of the width */
-        margin: 10px 0;
-        font-size: 1rem; /* Adjust text size for mobile */
+    .chapter-right a, .chapter-right span {
+        width: auto;
+        padding: 10px 15px;
     }
 }
 
@@ -153,62 +193,29 @@
     .chapter-container {
         padding: 10px;
         margin: 8px 0;
-        flex-direction: column;  /* Stack vertically for very small screens */
+        flex-direction: column;
     }
 
     .chapter-left {
         text-align: left;
-        width: 100%;  /* Take up full width */
+        width: 100%;
     }
 
     .chapter-right {
-        width: 100%;  /* Take up full width */
-        text-align: left;
+        flex-direction: column; /* Stack buttons vertically for small screens */
+        gap: 10px;
+        width: 100%;
     }
 
-    .chapter-right a {
-        font-size: 14px;
-        padding: 8px;
-    }
-
-    /* Card Container */
-    .card-container {
-        flex-direction: column;  /* Stack cards vertically */
-        align-items: center;
-    }
-
-    .card {
-        width: 90%;  /* Cards take up almost full width */
-        margin: 10px 0;
-        font-size: 1rem; /* Adjust text size for mobile */
+    .chapter-right a, .chapter-right span {
+        width: 100%;
+        text-align: center;
     }
 }
 
 /* Heading Styles */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-family: 'Arial', sans-serif;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .chapter-selection-container {
-        padding: 15px;
-    }
-
-    .card-container {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .card {
-        width: 45%;
-    }
-
-    .chapter-container {
-        padding: 15px;
-    }
-
-    .chapter-right a {
-        font-size: 0.9rem;
-    }
 }
