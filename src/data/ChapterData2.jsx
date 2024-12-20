@@ -7,8 +7,8 @@ const chapterData2 = {
         {
           chapter: "Physical World",
           pdf: "",
-          Intro: "https://www.youtube.com/watch?v=KdYci4gA2os",
-          youtubeLink: "https://www.youtube.com/watch?v=KdYci4gA2os"
+          Intro: "",
+          youtubeLink: ""
         },
         {
           chapter: "Units and Measurement",
