@@ -11,10 +11,12 @@ const Banner = () => {
     return (
         <section className="banner__section">
             <div className="banner__slides">
-                <img src={banner1} alt="banner1" />
+ 
                 <img src={banner2} alt="banner2" />
                 <img src={banner3} alt="banner3" />
                 <img src={banner4} alt="banner4" />
+
+                <img src={banner1} alt="banner1" />
             </div>
         </section>
     );
