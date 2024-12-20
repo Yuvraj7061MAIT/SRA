@@ -12,7 +12,7 @@ const About = () => {
                 </div>
                 <div className="right-content">
                     <p>
-                        Welcome to SRA Academy, where education transcends boundaries and excellence becomes a way of life. Established with a vision to redefine education, our institution stands as a beacon of knowledge and innovation, committed to nurturing the leaders and thinkers of tomorrow.
+                        Welcome to Maths on Tips, where education transcends boundaries and excellence becomes a way of life. Established with a vision to redefine education, our institution stands as a beacon of knowledge and innovation, committed to nurturing the leaders and thinkers of tomorrow.
                     </p>
                     <p>
                         At SRA Academy, we believe in the transformative power of education. Our philosophy is centered around the idea that every student possesses immense potential waiting to be unlocked. We understand that education is not just about acquiring knowledge but about fostering critical thinking, creativity, and a lifelong love for learning.

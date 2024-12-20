@@ -5,6 +5,9 @@ nav {
     border-radius: 20px;
     position: relative;
 }
+.on{
+    color: #fd6906;
+}
 
 .top__navbar {
     display: flex;

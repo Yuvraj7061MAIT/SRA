@@ -35,7 +35,7 @@ const Navbar = () => {
           <img src={logo} alt="logo" />
         </Link>
         <div className="sra">
-          <b>SRA ACADEMY</b>
+          <b>MATHS<span className="on">ON</ span>TIPS</b>
         </div>
         <div className="nav__btns primary__btn">
           {user ? (
