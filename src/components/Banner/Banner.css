@@ -1,50 +1,72 @@
+/* Main Banner Section */
 .banner__section {
-    margin: 0;
-    padding: 0; /* Ensure no padding */
-    overflow: hidden; /* Hide overflowing slides */
-    position: relative; /* Positioning context for absolute children */
-    width: 100%; /* Full width */
-    height: auto; /* Height will adjust based on content */
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
 }
 
+/* Slide Container */
 .banner__slides {
-    display: flex; /* Align slides in a row */
-    animation: slide 12s infinite; /* Start animation */
+  display: flex;
+  width: calc(100vw * 5); /* 4 images + 1 duplicate for seamless loop */
+  height: 100%;
+  animation: slide 12s infinite linear;
 }
 
+/* Individual Slides */
 .banner__slides img {
-    width: 100%; /* Full width */
-    height: auto; /* Allow height to adjust automatically */
-    max-height: 100vh; /* Maximum height to keep it within the viewport */
-    object-fit: cover; /* Cover the section while preserving aspect ratio */
+  width: 100vw; /* Full viewport width for each slide */
+  height: 100vh; /* Full viewport height for each slide */
+  object-fit: cover; /* Scale image to cover the entire slide */
 }
 
+/* Circular Scrolling Animation */
 @keyframes slide {
-    0% {
-        transform: translateX(0); /* Start at original position */
-    }
-    20% {
-        transform: translateX(0); /* Keep first image visible */
-    }
-    25% {
-        transform: translateX(-100%); /* Move first image out */
-    }
-    45% {
-        transform: translateX(-100%); /* Keep second image visible */
-    }
-    50% {
-        transform: translateX(-200%); /* Move second image out */
-    }
-    70% {
-        transform: translateX(-200%); /* Keep third image visible */
-    }
-    75% {
-        transform: translateX(-300%); /* Move third image out */
-    }
-    95% {
-        transform: translateX(-300%); /* Keep fourth image visible */
-    }
-    100% {
-        transform: translateX(0); /* Reset to start */
-    }
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-100vw);
+  }
+  45% {
+    transform: translateX(-100vw);
+  }
+  50% {
+    transform: translateX(-200vw);
+  }
+  70% {
+    transform: translateX(-200vw);
+  }
+  75% {
+    transform: translateX(-300vw);
+  }
+  95% {
+    transform: translateX(-300vw);
+  }
+  100% {
+    transform: translateX(-400vw); /* Ends at the duplicate slide */
+  }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .banner__slides img {
+    object-fit: contain; /* Adjust for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .banner__section {
+    height: auto; /* Allow auto-adjust height on very small screens */
+  }
+
+  .banner__slides img {
+    object-fit: cover; /* Maintain full coverage */
+  }
 }
